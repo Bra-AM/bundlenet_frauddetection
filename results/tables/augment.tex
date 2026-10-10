@@ -1,0 +1,22 @@
+\begin{table}[t]
+\caption{XGBoost trained on the training set plus 2{,}000 generated fraudulent transactions and evaluated on the test set (75 frauds). The base space used by each generator is given in parentheses. Mean {\scriptsize $\pm$ 95\% CI} over 3 seeds; higher is better.}
+\label{tab:augment}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+ & AUPRC & AUROC & Recall@FPR=0.1\% & F1@0.5 \\
+\midrule
+No augmentation & 0.800 {\scriptsize $\pm$ 0.003} & 0.987 {\scriptsize $\pm$ 0.003} & 0.800 {\scriptsize $\pm$ 0.000} & 0.823 {\scriptsize $\pm$ 0.016} \\
+SMOTE & 0.798 {\scriptsize $\pm$ 0.006} & 0.986 {\scriptsize $\pm$ 0.001} & 0.804 {\scriptsize $\pm$ 0.007} & 0.809 {\scriptsize $\pm$ 0.009} \\
+SMOTE (1:1) & 0.787 {\scriptsize $\pm$ 0.001} & 0.975 {\scriptsize $\pm$ 0.001} & 0.773 {\scriptsize $\pm$ 0.000} & 0.704 {\scriptsize $\pm$ 0.006} \\
+BundleNet (class label) & \best{0.814 {\scriptsize $\pm$ 0.005}} & \best{0.991 {\scriptsize $\pm$ 0.001}} & 0.800 {\scriptsize $\pm$ 0.000} & \best{0.837 {\scriptsize $\pm$ 0.010}} \\
+CGAN (class label) & 0.809 {\scriptsize $\pm$ 0.001} & 0.988 {\scriptsize $\pm$ 0.002} & 0.800 {\scriptsize $\pm$ 0.000} & 0.835 {\scriptsize $\pm$ 0.009} \\
+CGAN-local (class label) & 0.805 {\scriptsize $\pm$ 0.003} & 0.988 {\scriptsize $\pm$ 0.002} & 0.804 {\scriptsize $\pm$ 0.007} & 0.836 {\scriptsize $\pm$ 0.003} \\
+Gaussian-local (class label) & 0.802 {\scriptsize $\pm$ 0.003} & 0.986 {\scriptsize $\pm$ 0.001} & \best{0.813 {\scriptsize $\pm$ 0.013}} & 0.800 {\scriptsize $\pm$ 0.013} \\
+BundleNet (model score) & 0.809 {\scriptsize $\pm$ 0.001} & 0.988 {\scriptsize $\pm$ 0.002} & 0.800 {\scriptsize $\pm$ 0.000} & 0.828 {\scriptsize $\pm$ 0.011} \\
+CGAN-local (model score) & 0.781 {\scriptsize $\pm$ 0.017} & 0.986 {\scriptsize $\pm$ 0.003} & 0.796 {\scriptsize $\pm$ 0.007} & 0.798 {\scriptsize $\pm$ 0.035} \\
+Gaussian-local (model score) & 0.804 {\scriptsize $\pm$ 0.004} & 0.989 {\scriptsize $\pm$ 0.001} & 0.804 {\scriptsize $\pm$ 0.013} & 0.812 {\scriptsize $\pm$ 0.013} \\
+\bottomrule
+\end{tabular}}
+\end{table}

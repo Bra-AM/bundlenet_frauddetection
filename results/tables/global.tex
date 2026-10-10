@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Global data generation with the model score as base space: 4{,}000 generated transactions compared with 4{,}000 held-out test transactions. Mean {\scriptsize $\pm$ 95\% CI} over 3 trained models $\times$ 10 repetitions; lower is better. The best method is in bold; when it is SMOTE-local, which interpolates between training transactions, the best learned model is underlined. \textit{Real (train)} uses real training transactions in place of generated ones and serves as a reference.}
+\label{tab:global}
+\small
+\begin{tabular}{llccccccc}
+\toprule
+ & & BundleNet & CGAN & CGAN-local & WGAN & Gaussian-local & SMOTE-local & \textit{Real (train)} \\
+\midrule
+\multirow{5}{*}{Global} & $W_1$ & \underline{3.49 {\scriptsize $\pm$ 0.02}} & 3.72 {\scriptsize $\pm$ 0.01} & 3.64 {\scriptsize $\pm$ 0.03} & 3.81 {\scriptsize $\pm$ 0.01} & 4.59 {\scriptsize $\pm$ 0.01} & \best{3.14 {\scriptsize $\pm$ 0.01}} & \textcolor{gray}{3.13 {\scriptsize $\pm$ 0.01}} \\
+ & $W_2$ & 8.73 {\scriptsize $\pm$ 0.63} & 9.03 {\scriptsize $\pm$ 0.39} & \underline{8.51 {\scriptsize $\pm$ 0.28}} & 9.61 {\scriptsize $\pm$ 0.46} & 11.7 {\scriptsize $\pm$ 0.4} & \best{6.30 {\scriptsize $\pm$ 0.39}} & \textcolor{gray}{7.16 {\scriptsize $\pm$ 0.52}} \\
+ & MSMD & \underline{14.3 {\scriptsize $\pm$ 1.2}} & 15.6 {\scriptsize $\pm$ 0.9} & 15.4 {\scriptsize $\pm$ 0.9} & 15.9 {\scriptsize $\pm$ 1.0} & 18.0 {\scriptsize $\pm$ 0.9} & \best{8.91 {\scriptsize $\pm$ 0.79}} & \textcolor{gray}{9.26 {\scriptsize $\pm$ 1.06}} \\
+ & KL-fwd & \underline{17.9 {\scriptsize $\pm$ 0.1}} & 19.2 {\scriptsize $\pm$ 0.2} & 19.0 {\scriptsize $\pm$ 0.2} & 19.7 {\scriptsize $\pm$ 0.2} & 25.9 {\scriptsize $\pm$ 0.1} & \best{11.1 {\scriptsize $\pm$ 0.2}} & \textcolor{gray}{7.61 {\scriptsize $\pm$ 0.12}} \\
+ & KL-bwd & 5.09 {\scriptsize $\pm$ 0.07} & 10.9 {\scriptsize $\pm$ 0.4} & 10.0 {\scriptsize $\pm$ 0.2} & 6.38 {\scriptsize $\pm$ 0.06} & \best{1.61 {\scriptsize $\pm$ 0.02}} & 6.95 {\scriptsize $\pm$ 0.09} & \textcolor{gray}{8.63 {\scriptsize $\pm$ 0.11}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

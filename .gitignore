@@ -1,0 +1,7 @@
+# data (download from Kaggle, see data/README.md) and everything recomputed by the pipeline
+data/creditcard.csv
+cache/
+results/augmentation_predictions.npz
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

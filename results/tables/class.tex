@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\caption{Data generation with the class label as base space. In the fiber over the fraud class, generated transactions are compared with the 74 test frauds. The last row is the share of generated fraud that the XGBoost model scores above $0.5$; the same share among the real test frauds is $0.70$ (\textit{Real (train)} reaches $1.00$ because the XGBoost model was fitted on these transactions). Mean {\scriptsize $\pm$ 95\% CI} over 3 trained models $\times$ 10 repetitions; lower is better. }
+\label{tab:class}
+\small
+\begin{tabular}{llccccc}
+\toprule
+ & & BundleNet & CGAN & CGAN-local & Gaussian-local & \textit{Real (train)} \\
+\midrule
+\multirow{5}{*}{Global} & $W_1$ & 3.76 {\scriptsize $\pm$ 0.01} & \best{3.74 {\scriptsize $\pm$ 0.03}} & 3.76 {\scriptsize $\pm$ 0.03} & 4.93 {\scriptsize $\pm$ 0.01} & \textcolor{gray}{3.15 {\scriptsize $\pm$ 0.01}} \\
+ & $W_2$ & 9.93 {\scriptsize $\pm$ 0.70} & \best{9.62 {\scriptsize $\pm$ 0.51}} & 9.69 {\scriptsize $\pm$ 0.50} & 12.4 {\scriptsize $\pm$ 0.4} & \textcolor{gray}{7.19 {\scriptsize $\pm$ 0.45}} \\
+ & MSMD & 17.1 {\scriptsize $\pm$ 1.4} & \best{16.4 {\scriptsize $\pm$ 1.0}} & 16.7 {\scriptsize $\pm$ 0.9} & 21.8 {\scriptsize $\pm$ 1.0} & \textcolor{gray}{8.95 {\scriptsize $\pm$ 0.88}} \\
+ & KL-fwd & 20.9 {\scriptsize $\pm$ 0.2} & \best{20.0 {\scriptsize $\pm$ 0.2}} & 20.5 {\scriptsize $\pm$ 0.3} & 29.2 {\scriptsize $\pm$ 0.2} & \textcolor{gray}{7.64 {\scriptsize $\pm$ 0.13}} \\
+ & KL-bwd & 4.34 {\scriptsize $\pm$ 0.13} & 11.9 {\scriptsize $\pm$ 0.3} & 13.1 {\scriptsize $\pm$ 0.5} & \best{0.871 {\scriptsize $\pm$ 0.020}} & \textcolor{gray}{8.59 {\scriptsize $\pm$ 0.10}} \\
+\midrule
+\multirow{6}{*}{Fiberwise (fraud)} & $W_1$ & \best{12.8 {\scriptsize $\pm$ 0.3}} & 15.8 {\scriptsize $\pm$ 0.3} & 16.0 {\scriptsize $\pm$ 0.3} & 17.7 {\scriptsize $\pm$ 0.2} & \textcolor{gray}{13.4 {\scriptsize $\pm$ 0.2}} \\
+ & $W_2$ & \best{130 {\scriptsize $\pm$ 6}} & 161 {\scriptsize $\pm$ 7} & 164 {\scriptsize $\pm$ 5} & 179 {\scriptsize $\pm$ 4} & \textcolor{gray}{148 {\scriptsize $\pm$ 6}} \\
+ & MSMD & \best{49.8 {\scriptsize $\pm$ 0.7}} & 51.1 {\scriptsize $\pm$ 0.9} & 53.6 {\scriptsize $\pm$ 2.4} & 87.5 {\scriptsize $\pm$ 2.1} & \textcolor{gray}{40.8 {\scriptsize $\pm$ 0.6}} \\
+ & KL-fwd & \best{13.6 {\scriptsize $\pm$ 0.2}} & 14.2 {\scriptsize $\pm$ 0.3} & 14.5 {\scriptsize $\pm$ 0.6} & 25.0 {\scriptsize $\pm$ 0.4} & \textcolor{gray}{10.1 {\scriptsize $\pm$ 0.3}} \\
+ & KL-bwd & 14.1 {\scriptsize $\pm$ 0.5} & 21.3 {\scriptsize $\pm$ 0.5} & 22.3 {\scriptsize $\pm$ 0.6} & \best{10.8 {\scriptsize $\pm$ 0.3}} & \textcolor{gray}{21.9 {\scriptsize $\pm$ 0.6}} \\
+ & Share with $s(x) > 0.5$ & 0.712 {\scriptsize $\pm$ 0.014} & 0.956 {\scriptsize $\pm$ 0.009} & 0.949 {\scriptsize $\pm$ 0.013} & 0.777 {\scriptsize $\pm$ 0.011} & \textcolor{gray}{1.00 {\scriptsize $\pm$ 0.00}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

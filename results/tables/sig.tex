@@ -1,0 +1,21 @@
+\begin{table}[H]
+\caption{Paired bootstrap (2{,}000 resamples of the test set) of the change in AUPRC relative to no augmentation, using detector scores averaged over the three seeds. $p$ is the one-sided bootstrap probability of no improvement, without correction for multiple comparisons.}
+\label{tab:sig}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Augmentation & $\Delta$AUPRC & 95\% interval & $p$ \\
+\midrule
+SMOTE & -0.002 & [-0.017, +0.013] & 0.616 \\
+SMOTE (1:1) & -0.016 & [-0.049, +0.012] & 0.845 \\
+BundleNet (class label) & +0.015 & [+0.002, +0.030] & 0.013 \\
+CGAN (class label) & +0.008 & [-0.003, +0.021] & 0.089 \\
+CGAN-local (class label) & +0.006 & [-0.005, +0.018] & 0.127 \\
+Gaussian-local (class label) & +0.001 & [-0.024, +0.026] & 0.472 \\
+BundleNet (model score) & +0.008 & [-0.002, +0.019] & 0.051 \\
+CGAN-local (model score) & -0.005 & [-0.021, +0.010] & 0.740 \\
+Gaussian-local (model score) & +0.006 & [-0.013, +0.027] & 0.273 \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\caption{Fiberwise data generation with the model score as base space: 200 transactions generated over a base point are compared with the 50 test transactions whose score is closest to it, for 15 base points drawn from all test transactions (\emph{all}) or from those with $s(x) > 0.5$ (\emph{high risk}). The base-point error is the mean absolute difference between the requested base point and the XGBoost logit of the generated transactions. Mean {\scriptsize $\pm$ 95\% CI} over 3 trained models $\times$ 10 repetitions; lower is better. Marking as in Table~\ref{tab:global}.}
+\label{tab:fiber}
+\small
+\begin{tabular}{llcccccc}
+\toprule
+ & & BundleNet & CGAN & CGAN-local & Gaussian-local & SMOTE-local & \textit{Real (train)} \\
+\midrule
+\multirow{6}{*}{Fiberwise (all)} & $W_1$ & \best{4.36 {\scriptsize $\pm$ 0.05}} & 4.62 {\scriptsize $\pm$ 0.04} & 4.53 {\scriptsize $\pm$ 0.05} & 5.26 {\scriptsize $\pm$ 0.09} & 4.89 {\scriptsize $\pm$ 0.08} & \textcolor{gray}{4.62 {\scriptsize $\pm$ 0.11}} \\
+ & $W_2$ & \best{11.6 {\scriptsize $\pm$ 0.5}} & 13.4 {\scriptsize $\pm$ 0.6} & 12.8 {\scriptsize $\pm$ 0.6} & 16.4 {\scriptsize $\pm$ 2.5} & 15.1 {\scriptsize $\pm$ 0.8} & \textcolor{gray}{16.0 {\scriptsize $\pm$ 3.2}} \\
+ & MSMD & \best{17.4 {\scriptsize $\pm$ 0.9}} & 19.4 {\scriptsize $\pm$ 1.2} & 19.2 {\scriptsize $\pm$ 1.1} & 24.9 {\scriptsize $\pm$ 4.0} & 23.5 {\scriptsize $\pm$ 1.3} & \textcolor{gray}{17.4 {\scriptsize $\pm$ 4.5}} \\
+ & KL-fwd & \best{6.54 {\scriptsize $\pm$ 0.45}} & 7.46 {\scriptsize $\pm$ 0.47} & 7.29 {\scriptsize $\pm$ 0.49} & 13.6 {\scriptsize $\pm$ 0.5} & 11.3 {\scriptsize $\pm$ 0.5} & \textcolor{gray}{2.58 {\scriptsize $\pm$ 0.46}} \\
+ & KL-bwd & 5.64 {\scriptsize $\pm$ 0.08} & 9.22 {\scriptsize $\pm$ 0.20} & 8.65 {\scriptsize $\pm$ 0.15} & \best{0.693 {\scriptsize $\pm$ 0.093}} & 73.6 {\scriptsize $\pm$ 0.4} & \textcolor{gray}{8.83 {\scriptsize $\pm$ 0.46}} \\
+ & Base-point error & \underline{1.16 {\scriptsize $\pm$ 0.02}} & 1.50 {\scriptsize $\pm$ 0.03} & 1.36 {\scriptsize $\pm$ 0.02} & 1.26 {\scriptsize $\pm$ 0.02} & \best{0.878 {\scriptsize $\pm$ 0.021}} & \textcolor{gray}{0.660 {\scriptsize $\pm$ 0.018}} \\
+\midrule
+\multirow{6}{*}{Fiberwise (high risk)} & $W_1$ & \best{12.4 {\scriptsize $\pm$ 0.2}} & 15.0 {\scriptsize $\pm$ 1.0} & 15.7 {\scriptsize $\pm$ 0.8} & 18.3 {\scriptsize $\pm$ 0.3} & 15.8 {\scriptsize $\pm$ 0.4} & \textcolor{gray}{15.0 {\scriptsize $\pm$ 0.1}} \\
+ & $W_2$ & \best{184 {\scriptsize $\pm$ 12}} & 196 {\scriptsize $\pm$ 17} & 208 {\scriptsize $\pm$ 17} & 254 {\scriptsize $\pm$ 10} & 241 {\scriptsize $\pm$ 14} & \textcolor{gray}{244 {\scriptsize $\pm$ 10}} \\
+ & MSMD & \best{216 {\scriptsize $\pm$ 24}} & 333 {\scriptsize $\pm$ 40} & 333 {\scriptsize $\pm$ 36} & 222 {\scriptsize $\pm$ 22} & 217 {\scriptsize $\pm$ 23} & \textcolor{gray}{202 {\scriptsize $\pm$ 22}} \\
+ & KL-fwd & \best{16.7 {\scriptsize $\pm$ 0.1}} & 31.8 {\scriptsize $\pm$ 4.3} & 32.7 {\scriptsize $\pm$ 3.2} & 25.2 {\scriptsize $\pm$ 0.3} & 19.7 {\scriptsize $\pm$ 0.3} & \textcolor{gray}{12.0 {\scriptsize $\pm$ 0.2}} \\
+ & KL-bwd & \best{12.1 {\scriptsize $\pm$ 0.2}} & 29.5 {\scriptsize $\pm$ 1.6} & 32.3 {\scriptsize $\pm$ 1.0} & 14.7 {\scriptsize $\pm$ 0.2} & 76.2 {\scriptsize $\pm$ 0.7} & \textcolor{gray}{30.2 {\scriptsize $\pm$ 0.3}} \\
+ & Base-point error & \underline{1.78 {\scriptsize $\pm$ 0.08}} & 6.00 {\scriptsize $\pm$ 1.33} & 4.24 {\scriptsize $\pm$ 0.63} & 2.45 {\scriptsize $\pm$ 0.06} & \best{1.23 {\scriptsize $\pm$ 0.04}} & \textcolor{gray}{1.40 {\scriptsize $\pm$ 0.06}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

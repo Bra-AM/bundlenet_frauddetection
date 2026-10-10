@@ -1,0 +1,18 @@
+\begin{table}[t]
+\caption{Classification on the test set. BundleNet scores each transaction by the log-likelihood ratio of the two class fibers (Section~\ref{sec:llr}); no label is used at test time. Mean {\scriptsize $\pm$ 95\% CI} over 3 seeds; higher is better.}
+\label{tab:classify}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+ & AUPRC & AUROC & F1 \\
+\midrule
+BundleNet (likelihood ratio) & 0.757 {\scriptsize $\pm$ 0.025} & 0.971 {\scriptsize $\pm$ 0.011} & 0.184 {\scriptsize $\pm$ 0.043} \\
+XGBoost & 0.800 {\scriptsize $\pm$ 0.003} & \best{0.987 {\scriptsize $\pm$ 0.003}} & \best{0.823 {\scriptsize $\pm$ 0.016}} \\
+LightGBM & \best{0.800 {\scriptsize $\pm$ 0.001}} & 0.987 {\scriptsize $\pm$ 0.003} & 0.807 {\scriptsize $\pm$ 0.003} \\
+Random Forest & 0.793 {\scriptsize $\pm$ 0.001} & 0.949 {\scriptsize $\pm$ 0.007} & 0.810 {\scriptsize $\pm$ 0.003} \\
+MLP & 0.795 {\scriptsize $\pm$ 0.010} & 0.964 {\scriptsize $\pm$ 0.001} & 0.800 {\scriptsize $\pm$ 0.018} \\
+QDA (Gaussian likelihood ratio) & 0.119 {\scriptsize $\pm$ 0.000} & 0.974 {\scriptsize $\pm$ 0.000} & 0.105 {\scriptsize $\pm$ 0.000} \\
+\bottomrule
+\end{tabular}}
+\end{table}
